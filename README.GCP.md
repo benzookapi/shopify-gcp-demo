@@ -32,11 +32,11 @@ graph TD
 
   GcpRestApiBigQueryTable-->|Dataset Name + Table Name|GcpRestApiBigQueryInsert
 
-  ShopifyApi-->|Order Data JSON Array needs 1000 records|GcpRestApiBigQueryInsert
+  ShopifyApi-->|Order Data JSON Array -> needs 1000 records|GcpRestApiBigQueryInsert
 
   GcpRestApiBigQueryInsert-->|BigQuery URI|GcpRestApiVertexDataset
 
-  GcpRestApiVertexDataset-->|Dataset Id + Target Column ('amount' or 'country')|GcpRestApiVertexRun
+  GcpRestApiVertexDataset-->|Dataset Id + Target Column -> 'amount' or 'country'|GcpRestApiVertexRun
 
   GcpRestApiVertexRun-->GcpRestApiVertexResult
 
