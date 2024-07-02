@@ -1,3 +1,5 @@
+# Shopify GCP Vertex interation flow
+
 ```mermaid
 
 graph TD
@@ -24,13 +26,13 @@ graph TD
 
   ShopifyApp-->ShopifyApi
 
-  GcpRestApiBigQueryDataSet-->GcpRestApiBigQueryTable
+  GcpRestApiBigQueryDataSet-->|Dataset Name|GcpRestApiBigQueryTable
 
-  GcpRestApiBigQueryTable-->GcpRestApiBigQueryInsert
+  GcpRestApiBigQueryTable-->|Dataset Name + Table Name|GcpRestApiBigQueryInsert
 
   ShopifyApi-->|Order Data JSON Array|GcpRestApiBigQueryInsert
 
-  GcpRestApiBigQueryInsert-->GcpRestApiVertexDataset
+  GcpRestApiBigQueryInsert-->|BigQuery URI|GcpRestApiVertexDataset
 
   GcpRestApiVertexDataset-->|Dataset Id|GcpRestApiVertexRun
 
