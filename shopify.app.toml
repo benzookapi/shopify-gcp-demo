@@ -3,7 +3,7 @@
 client_id = "bfe4d4e0d21e0acaa34a8c8fb07664fa"
 name = "gcp-vertex-demo"
 handle = "gcp-vertex-demo"
-application_url = "https://readings-driver-receipt-exposure.trycloudflare.com"
+application_url = "https://gear-louisiana-destiny-emotions.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_orders,write_products"
 
 [auth]
 redirect_urls = [
-  "https://readings-driver-receipt-exposure.trycloudflare.com/auth/callback",
-  "https://readings-driver-receipt-exposure.trycloudflare.com/auth/shopify/callback",
-  "https://readings-driver-receipt-exposure.trycloudflare.com/api/auth/callback"
+  "https://gear-louisiana-destiny-emotions.trycloudflare.com/auth/callback",
+  "https://gear-louisiana-destiny-emotions.trycloudflare.com/auth/shopify/callback",
+  "https://gear-louisiana-destiny-emotions.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

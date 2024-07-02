@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { json } from "@remix-run/node";
 import { useActionData, Form } from "@remix-run/react";
 import {
@@ -8,7 +8,10 @@ import {
     Card,
     Button,
     BlockStack,
-    FormLayout
+    FormLayout,
+    Link,
+    Spinner,
+    Text
 } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
 import { authenticate } from "../shopify.server";
@@ -185,6 +188,8 @@ export const action = async ({ request }) => {
 
 export default function RunGCPConnect() {
     const actionData = useActionData();
+    console.log(`actionData: ${JSON.stringify(actionData)}`);
+
     const [id, setId] = useState('');
     const [token, setToken] = useState('');
     const [times, setTimes] = useState(1);
@@ -192,13 +197,24 @@ export default function RunGCPConnect() {
     const [table, setTable] = useState('my_shopify_table');
     const [display, setDisplay] = useState('my_training');
     const [location, setLocation] = useState('us-central1');
+
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        if (actionData) {
+            setLoading(false);
+        }
+    }, [actionData]);
+
     return (<Page>
         <TitleBar title="Connect Order data to GCP Vertex AI through BigQuery" />
         <Layout>
             <Layout.Section>
                 <Card>
                     <BlockStack gap="300">
-                        <Form method="POST">
+                        <Form method="POST" onSubmit={(event) => {
+                            setLoading(true);
+                        }}>
                             <FormLayout>
                                 <TextField name="id" onChange={setId} value={id} label="GCP Project ID" placeholder="my-project-1-*****">
                                 </TextField>
@@ -215,13 +231,28 @@ export default function RunGCPConnect() {
                                 <TextField name="location" onChange={setLocation} value={location} label="Vertex Location" placeholder="us-central1">
                                 </TextField>
                                 <Button variant="primary" submit>
-                                    Sync my order data to GCP Vertex pipeline
+                                    <Loading loading={loading}></Loading>
                                 </Button>
                             </FormLayout>
                         </Form>
+                    </BlockStack>
+                    <BlockStack gap="300">
+                        <Text>&nbsp;</Text>
+                    </BlockStack>
+                    <BlockStack gap="300" style={{ "fontSize": "x-large" }}>
+                        {actionData?.gcp_link && (
+                            <Link url={actionData.gcp_link} target="_blank">👀 Get the result!</Link>
+                        )}
                     </BlockStack>
                 </Card>
             </Layout.Section>
         </Layout>
     </Page>)
+};
+
+function Loading(props) {
+    if (props.loading) {
+        return <Spinner accessibilityLabel="Processing..." />;
+    }
+    return (<Text>Sync my order data to GCP Vertex pipeline</Text>);
 };
