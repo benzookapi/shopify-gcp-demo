@@ -33,8 +33,8 @@ graph TD
   GcpRestApiVertexRun-->GcpRestApiVertexResult
 
 
-  classDef start fill:#696969,color:white,font-weight:bold
-  class ShopifyOrders start
+  classDef edge1 fill:#696969,color:white,font-weight:bold
+  class ShopifyOrders edge1
 
   classDef shopify fill:#006400,color:white
   class ShopifyApi,GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun shopify
@@ -42,8 +42,8 @@ graph TD
   classDef gcp fill:#FFA500,color:white
   class ShopifyApi,GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun gcp
 
-  classDef end fill:#696969,color:white,font-weight:bold
-  class GcpRestApiVertexResult end
+  classDef edge2 fill:#696969,color:white,font-weight:bold
+  class GcpRestApiVertexResult edge2
 
 
 
