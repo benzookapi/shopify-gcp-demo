@@ -37,10 +37,10 @@ graph TD
   class ShopifyOrders edge1
 
   classDef shopify fill:#006400,color:white
-  class ShopifyApi,GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun shopify
+  class ShopifyApi
 
   classDef gcp fill:#FFA500,color:white
-  class ShopifyApi,GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun gcp
+  class GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun gcp
 
   classDef edge2 fill:#696969,color:white,font-weight:bold
   class GcpRestApiVertexResult edge2
