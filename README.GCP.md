@@ -1,6 +1,6 @@
 ```mermaid
 
-graph LR
+graph TD
 
   ShopifyApi("Shopify Admin GraphQL")
 
