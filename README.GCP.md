@@ -4,7 +4,7 @@ graph TD
 
   ShopifyOrders("Shopify Order Data")
 
-  ShopifyApi("Shopify Admin GraphQL for Order reading")
+  ShopifyApi("Shopify Admin API<br/>[Order reading]")
 
   GcpRestApiBigQueryDataSet("GCP REST API for BigQuery Dataset creation")
 
