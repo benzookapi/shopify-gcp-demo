@@ -1,4 +1,6 @@
-# Shopify GCP Vertex interation flow
+# Shopify GCP Vertex connecting
+
+## Workflow
 
 ```mermaid
 
@@ -30,11 +32,11 @@ graph TD
 
   GcpRestApiBigQueryTable-->|Dataset Name + Table Name|GcpRestApiBigQueryInsert
 
-  ShopifyApi-->|Order Data JSON Array|GcpRestApiBigQueryInsert
+  ShopifyApi-->|Order Data JSON Array (*needs >1000 records)|GcpRestApiBigQueryInsert
 
   GcpRestApiBigQueryInsert-->|BigQuery URI|GcpRestApiVertexDataset
 
-  GcpRestApiVertexDataset-->|Dataset Id + Target Column|GcpRestApiVertexRun
+  GcpRestApiVertexDataset-->|Dataset Id + Target Column ('amount' or 'country')|GcpRestApiVertexRun
 
   GcpRestApiVertexRun-->GcpRestApiVertexResult
 
@@ -51,10 +53,8 @@ graph TD
   classDef edge2 fill:#696969,color:white,font-weight:bold
   class GcpRestApiVertexResult edge2
 
-
-
-
-
-
-
 ```
+
+## How to run
+1. aa
+2. bb
