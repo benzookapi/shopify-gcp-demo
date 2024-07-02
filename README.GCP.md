@@ -33,5 +33,16 @@ graph TD
   GcpRestApiVertexRun-->GcpRestApiVertexResult
 
 
+  classDef edge fill:#696969,color:white,font-weight:bold
+  class ShopifyOrders, GcpRestApiVertexResult
+
+  classDef api fill:#006400,color:white,font-weight:bold
+  class ShopifyApi, GcpRestApiBigQueryDataSet, GcpRestApiBigQueryTable, GcpRestApiBigQueryInsert, GcpRestApiVertexDataset, GcpRestApiVertexRun
+
+
+
+
+
+
 
 ```
