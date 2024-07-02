@@ -37,7 +37,7 @@ graph TD
   class ShopifyOrders edge1
 
   classDef shopify fill:#006400,color:white
-  class ShopifyApi
+  class ShopifyApi shopify
 
   classDef gcp fill:#FFA500,color:white
   class GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun gcp
