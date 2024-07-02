@@ -16,7 +16,7 @@ graph TD
 
   GcpRestApiVertexRun("GCP REST API for Vertex AI Pineline running")
 
-  GcpRestApiVertexResult("Vertex AI ML Analysis")
+  GcpRestApiVertexResult("Vertex ML Analysis")
 
   ShopifyOrders-->ShopifyApi
 
@@ -33,11 +33,17 @@ graph TD
   GcpRestApiVertexRun-->GcpRestApiVertexResult
 
 
-  classDef edge fill:#696969,color:white,font-weight:bold
-  class ShopifyOrders,GcpRestApiVertexResult edge
+  classDef start fill:#696969,color:white,font-weight:bold
+  class ShopifyOrders start
 
-  classDef api fill:#006400,color:white,font-weight:bold
-  class ShopifyApi,GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun api
+  classDef shopify fill:#006400,color:white
+  class ShopifyApi,GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun shopify
+
+  classDef gcp fill:#FFA500,color:white
+  class ShopifyApi,GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun gcp
+
+  classDef end fill:#696969,color:white,font-weight:bold
+  class GcpRestApiVertexResult end
 
 
 
