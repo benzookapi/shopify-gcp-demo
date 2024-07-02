@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { json } from "@remix-run/node";
 import { useActionData, Form } from "@remix-run/react";
 import {
@@ -11,7 +11,8 @@ import {
     FormLayout,
     Link,
     Spinner,
-    Text
+    Text,
+    Select
 } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
 import { authenticate } from "../shopify.server";
@@ -34,8 +35,10 @@ export const action = async ({ request }) => {
     const display = formData.get('display');
     // GCP Vertex location
     const location = formData.get('location');
+    // GCP Vertex target column
+    const column = formData.get('column');
 
-    console.log(`formData(id / token / times / dataset / table / display / location): ${id},  ${token},  ${times},  ${dataset},  ${table},  ${display}, ${location}`);
+    console.log(`formData(id / token / times / dataset / table / display / location / column): ${id},  ${token},  ${times},  ${dataset},  ${table},  ${display}, ${location}, ${column}`);
 
     const { admin } = await authenticate.admin(request);
 
@@ -158,7 +161,7 @@ export const action = async ({ request }) => {
         "displayName": display,
         "trainingTaskDefinition": "gs://google-cloud-aiplatform/schema/trainingjob/definition/automl_tabular_1.0.0.yaml",
         "trainingTaskInputs": {
-            "targetColumn": "country",
+            "targetColumn": column,
             "predictionType": "classification",
             "transformations": [
                 { "auto": { "column_name": "id" } },
@@ -197,6 +200,12 @@ export default function RunGCPConnect() {
     const [table, setTable] = useState('my_shopify_table');
     const [display, setDisplay] = useState('my_training');
     const [location, setLocation] = useState('us-central1');
+    const [column, setColumn] = useState('amount');
+
+    const handleColumnChange = useCallback(
+        (value) => setColumn(value),
+        [],
+    );
 
     const [loading, setLoading] = useState(false);
 
@@ -230,6 +239,16 @@ export default function RunGCPConnect() {
                                 </TextField>
                                 <TextField name="location" onChange={setLocation} value={location} label="Vertex Location" placeholder="us-central1">
                                 </TextField>
+                                <Select
+                                    name="column"
+                                    label="Target Column"
+                                    options={[
+                                        { label: 'Amount', value: 'amount' },
+                                        { label: 'Country', value: 'country' }
+                                    ]}
+                                    onChange={handleColumnChange}
+                                    value={column}
+                                />
                                 <Button variant="primary" submit>
                                     <Loading loading={loading}></Loading>
                                 </Button>

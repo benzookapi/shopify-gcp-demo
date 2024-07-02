@@ -34,7 +34,7 @@ graph TD
 
   GcpRestApiBigQueryInsert-->|BigQuery URI|GcpRestApiVertexDataset
 
-  GcpRestApiVertexDataset-->|Dataset Id|GcpRestApiVertexRun
+  GcpRestApiVertexDataset-->|Dataset Id + Target Column|GcpRestApiVertexRun
 
   GcpRestApiVertexRun-->GcpRestApiVertexResult
 

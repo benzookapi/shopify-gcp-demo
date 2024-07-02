@@ -3,7 +3,7 @@
 client_id = "bfe4d4e0d21e0acaa34a8c8fb07664fa"
 name = "gcp-vertex-demo"
 handle = "gcp-vertex-demo"
-application_url = "https://thoughts-mic-reproduce-specialists.trycloudflare.com"
+application_url = "https://grave-insertion-trades-striking.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_orders,write_products"
 
 [auth]
 redirect_urls = [
-  "https://thoughts-mic-reproduce-specialists.trycloudflare.com/auth/callback",
-  "https://thoughts-mic-reproduce-specialists.trycloudflare.com/auth/shopify/callback",
-  "https://thoughts-mic-reproduce-specialists.trycloudflare.com/api/auth/callback"
+  "https://grave-insertion-trades-striking.trycloudflare.com/auth/callback",
+  "https://grave-insertion-trades-striking.trycloudflare.com/auth/shopify/callback",
+  "https://grave-insertion-trades-striking.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
