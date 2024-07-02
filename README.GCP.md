@@ -34,10 +34,10 @@ graph TD
 
 
   classDef edge fill:#696969,color:white,font-weight:bold
-  class ShopifyOrders, GcpRestApiVertexResult
+  class ShopifyOrders,GcpRestApiVertexResult edge
 
   classDef api fill:#006400,color:white,font-weight:bold
-  class ShopifyApi, GcpRestApiBigQueryDataSet, GcpRestApiBigQueryTable, GcpRestApiBigQueryInsert, GcpRestApiVertexDataset, GcpRestApiVertexRun
+  class ShopifyApi,GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun api
 
 
 
