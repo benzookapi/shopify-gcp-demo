@@ -24,11 +24,11 @@ graph TD
 
   GcpRestApiBigQueryTable-->GcpRestApiBigQueryInsert
 
-  ShopifyApi-->|Order Data JSON|GcpRestApiBigQueryInsert
+  ShopifyApi-->|Order Data JSON Array|GcpRestApiBigQueryInsert
 
   GcpRestApiBigQueryInsert-->GcpRestApiVertexDataset
 
-  GcpRestApiVertexDataset-->GcpRestApiVertexRun
+  GcpRestApiVertexDataset-->|Dataset Id|GcpRestApiVertexRun
 
   GcpRestApiVertexRun-->GcpRestApiVertexResult
 
