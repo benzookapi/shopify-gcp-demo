@@ -4,21 +4,25 @@ graph TD
 
   ShopifyOrders("Shopify Order Data")
 
+  ShopifyApp("Shopify CLI Remix App")
+
   ShopifyApi("Shopify Admin API [Order reading]")
 
-  GcpRestApiBigQueryDataSet("GCP REST API for BigQuery Dataset creation")
+  GcpRestApiBigQueryDataSet("GCP REST API [BigQuery Dataset creation]")
 
-  GcpRestApiBigQueryTable("GCP REST API for BigQuery Dataset Table creation")
+  GcpRestApiBigQueryTable("GCP REST API [BigQuery Dataset Table creation]")
 
-  GcpRestApiBigQueryInsert("GCP REST API for BigQuery Dataset Table insertion")
+  GcpRestApiBigQueryInsert("GCP REST API [BigQuery Dataset Table insertion]")
 
-  GcpRestApiVertexDataset("GCP REST API for Vertex AI Dataset creation")
+  GcpRestApiVertexDataset("GCP REST API [Vertex AI Dataset creation]")
 
-  GcpRestApiVertexRun("GCP REST API for Vertex AI Pineline running")
+  GcpRestApiVertexRun("GCP REST API [Vertex AI Pineline running]")
 
   GcpRestApiVertexResult("Vertex ML Analysis")
 
-  ShopifyOrders-->ShopifyApi
+  ShopifyOrders-->ShopifyApp
+
+  ShopifyApp-->ShopifyApi
 
   GcpRestApiBigQueryDataSet-->GcpRestApiBigQueryTable
 
@@ -37,7 +41,7 @@ graph TD
   class ShopifyOrders edge1
 
   classDef shopify fill:#006400,color:white
-  class ShopifyApi shopify
+  class ShopifyApp,ShopifyApi shopify
 
   classDef gcp fill:#FFA500,color:white
   class GcpRestApiBigQueryDataSet,GcpRestApiBigQueryTable,GcpRestApiBigQueryInsert,GcpRestApiVertexDataset,GcpRestApiVertexRun gcp
