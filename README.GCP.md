@@ -72,7 +72,7 @@ You can read the all code in [This file](./app/routes/app.gcp.jsx).
 - Training takes a hour or longer, and not guranteed to get finished successfully.
 
 ## TODO
-- Currently, the order items are afew and the training is hardcoded as `classification` only. For more effective AI training, more data items and other type and paramaters like forecasting are required. 
+- Currently, order items are a few and the training is hardcoded as `classification`. For more effective AI training, more data items and other type and paramaters like forecasting are required. 
 
 ## Possible use cases in the future (with more enhancement in TODO)
 - Classification of customers based on order data
