@@ -63,6 +63,9 @@ graph TD
 5. Input the project id, access token above and other items and click the button on the bottom.
 6. After a while, you will see the result link below the button to navigate you to the GCP training detail page.
 
+## Demo
+You check how it runs as a video in [Wiki](../../wiki)
+
 
 ## Check the code
 You can read the all code in [This file](./app/routes/app.gcp.jsx).
