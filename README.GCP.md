@@ -73,3 +73,8 @@ You can read the all code in [This file](./app/routes/app.gcp.jsx).
 
 ## TODO
 - Currently, the order items are afew and the training is hardcoded as `classification` only. For more effective AI training, more data items and other type and paramaters like forecasting are required. 
+
+## Possible use cases in the future (with more enhancement in TODO)
+- Classification of customers based on order data
+- Forecasting of country based order average prices
+- ... etc.
