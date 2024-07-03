@@ -1,3 +1,12 @@
+# 🧪 Shopoify GCP Vertex AI Demo App
+
+This app is a modified version of [Shopify CLI generated Remix App](https://shopify.dev/docs/apps/build/scaffold-app) described below to add a new page for importing the store order data to GCP BigQuery and Vertex AI pineline training with a single one button clickig, no need for manual operation!
+
+For more details and how to run, check [README.GCP.md](./README.GCP.md).
+
+If you're not familiar to Remix or Shopify Remix app template, read the following description first.👇
+
+
 # Shopify App Template - Remix
 
 This is a template for building a [Shopify app](https://shopify.dev/docs/apps/getting-started) using the [Remix](https://remix.run) framework.

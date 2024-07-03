@@ -56,5 +56,20 @@ graph TD
 ```
 
 ## How to run
-1. aa
-2. bb
+1. Get your GCP project ID from [GCP dashboard](https://console.cloud.google.com/).
+2. Get your GCP REST API access token using [the command](https://cloud.google.com/sdk/docs/install) of [gcloud auth print-access-token](https://cloud.google.com/sdk/gcloud/reference/auth/print-access-token) (note that this token gets expired soon, if you see the error of authentication in your severside console, run the command again to get the latest token). 
+3. Run this app with `shopify app dev` or starting in your hosted server (for more details, read [README.md](./README.GCP.md) or [Shopify.dev](https://shopify.dev/docs/apps/build/scaffold-app)).
+4. Go to the menu on the app navigation named `GCP Vertex AI Demo`.
+5. Input the project id, access token above and other items and click the button on the bottom.
+6. After a while, you will see the result link below the button to navigate you to the GCP training detail page.
+
+
+# Check the code
+You can read the all code in [This file](./app/routes/app.gcp.jsx).
+
+# Notes
+- You need more than 1,000 records (orders) at least to run the AI training.
+- Training takes a hour or longer, and not guranteed to get finished successfully.
+
+# TODO
+- Currently, the order items are afew and the training is hardcoded as `classification` only. For more effective AI training, more data items and other type and paramaters like forecasting are required. 
