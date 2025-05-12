@@ -17,3 +17,4 @@ RUN npm run build
 RUN rm -f prisma/dev.sqlite
 
 CMD ["npm", "run", "docker-start"]
+
