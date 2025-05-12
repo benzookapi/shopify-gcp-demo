@@ -66,7 +66,7 @@ graph TD
 ## If you want to host the app in your remote server, not localhost, follow the steps.
 1. Add three environmntal variables `SHOPIFY_API_KEY` (copied from `.env` or your app settings in[partner dashboard](https://www.shopify.com/partners)), `SHOPIFY_API_SECRET` (copied from your app settings in[partner dashboard](https://www.shopify.com/partners)), and `SHOPIFY_APP_URL` (your remote server host as the app top URL like `https://YOUR_APP_NAME.onrender.com`) in your remote server settings or instance.
 2. Replace `application_url` and `redirect_urls` in `shopify.app.toml` domains with `SHOPIFY_APP_URL` above to run `shopify app deploy` to apply the change to your app settings.
-3. Run `npm install && npm run build && npm run start` in your remote server with this source code uploaded or connecting to this repository. If you use Docker supporting Paas like [Render](https://render.com), just specify `./Dockerfile` in the Docker file path, **you don't need to set any command lines above**.
+3. Run `npm install && npm run build && npm run setup && npm run start` in your remote server with this source code uploaded or connecting to this repository. If you use Docker supporting Paas like [Render](https://render.com), just specify `./Dockerfile` in the Docker file path, **you don't need to set any command lines above**.
 4. Access to `SHOPIFY_APP_URL` and input your Shopify development store domnain in the center text box and click `login`.
 5. The OAuth install happens to redirect you to the app top UI and follow the [How to run] steps above.
 6. (Optional: If you want to use session DB in Prisma with aother RDB like `MySQL`, you need more change in [README.md](./README.md). By default, the app uses `SQLite`.)
